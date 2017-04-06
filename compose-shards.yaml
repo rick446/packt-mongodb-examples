@@ -1,0 +1,30 @@
+version: '3'
+services:
+  mongod-data:
+    image: mongo
+    hostname: mongod-data
+    entrypoint: [ "/usr/bin/mongod", "--shardsvr" ]
+
+  mongod-config:
+    image: mongo
+    hostname: mongod-config
+    entrypoint: [ "/usr/bin/mongod", "--configsvr", "--replSet", "config" ]
+    ports:
+      - "27019:27019"
+
+  mongos:
+    image: mongo
+    links:
+      - mongod-data:mongod-data
+      - mongod-config:mongod-config
+    entrypoint: [ "/usr/bin/mongos", "--configdb", "config/mongod-config"]
+    ports:
+      - "27117:27017"
+
+  mongosetup:
+    image: mongo
+    links:
+      - mongod-data:mongod-data
+      - mongod-config:mongod-config
+      - mongos:mongos
+    command: /bin/bash -i

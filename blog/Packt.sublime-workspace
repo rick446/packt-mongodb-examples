@@ -508,28 +508,31 @@
 	"buffers":
 	[
 		{
-			"file": "app.py",
+			"file": "/Users/rick446/src/PackT/DevelopingWithMongoDB/restaurants.py",
 			"settings":
 			{
-				"buffer_size": 960,
+				"buffer_size": 848,
 				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "restaurants.py"
+			}
+		},
+		{
+			"file": "/Users/rick446/src/PackT/DevelopingWithMongoDB/docker-compose.yaml",
+			"settings":
+			{
+				"buffer_size": 730,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/rick446/src/PackT/DevelopingWithMongoDB/runapp.py",
+			"contents": "version: '3'\nservices:\n  mongo-data:\n    image: mongo\n    hostname: mongo-data\n    entrypoint: [ \"/usr/bin/mongod\" ]\n    ports:\n      - \"27018:27018\"\n\n  mongo-config:\n    image: mongo\n    hostname: mongo-config\n    entrypoint: [ \"/usr/bin/mongod\" ]\n    ports:\n      - \"27018:27018\"\n\n  mongo-b:\n    image: mongo\n    hostname: mongo-b\n    entrypoint: [ \"/usr/bin/mongod\", \"--replSet\", \"rs\", \"--journal\", \"--smallfiles\", \"--port\", \"27019\" ]\n    ports:\n      - \"27019:27019\"\n\n  mongo-c:\n    image: mongo\n    hostname: mongo-c\n    entrypoint: [ \"/usr/bin/mongod\", \"--replSet\", \"rs\", \"--journal\", \"--smallfiles\", \"--port\", \"27020\" ]\n    ports:\n      - \"27020:27020\"\n\n  mongosetup:\n    image: mongo\n    links:\n      - mongo-a:mongo-a\n      - mongo-b:mongo-b\n      - mongo-c:mongo-c\n    command: /bin/bash -i\n",
+			"file": "/Users/rick446/src/PackT/DevelopingWithMongoDB/compose-shards.yaml",
+			"file_size": 730,
+			"file_write_time": 131357940730000000,
 			"settings":
 			{
-				"buffer_size": 103,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "model.py",
-			"settings":
-			{
-				"buffer_size": 316,
+				"buffer_size": 801,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -542,10 +545,18 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 87.0,
-		"last_filter": "",
+		"height": 47.0,
+		"last_filter": "python",
 		"selected_items":
 		[
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
 			[
 				"revert",
 				"File: Revert"
@@ -611,10 +622,6 @@
 				"Set Syntax: JavaScript Next"
 			],
 			[
-				"javas",
-				"Set Syntax: JavaScript Next"
-			],
-			[
 				"mover",
 				"Package Control: Remove Repository"
 			],
@@ -629,10 +636,6 @@
 			[
 				"close",
 				"Project: Close"
-			],
-			[
-				"python",
-				"Set Syntax: Python"
 			],
 			[
 				"yaml",
@@ -903,7 +906,7 @@
 				"View: Toggle Side Bar"
 			]
 		],
-		"width": 467.0
+		"width": 485.0
 	},
 	"console":
 	{
@@ -924,10 +927,16 @@
 	"expanded_folders":
 	[
 		"/Users/rick446/src/PackT/DevelopingWithMongoDB",
+		"/Users/rick446/src/PackT/DevelopingWithMongoDB/.ipynb_checkpoints",
 		"/Users/rick446/src/PackT/DevelopingWithMongoDB/blog"
 	],
 	"file_history":
 	[
+		"/Users/rick446/src/PackT/DevelopingWithMongoDB/blog/model.py",
+		"/Users/rick446/src/PackT/DevelopingWithMongoDB/replSetInitiate.js",
+		"/Users/rick446/src/PackT/DevelopingWithMongoDB/docker-compose.yaml",
+		"/Users/rick446/src/PackT/DevelopingWithMongoDB/blog/app.py",
+		"/Users/rick446/src/PackT/DevelopingWithMongoDB/runapp.py",
 		"/Users/rick446/src/recorder/recorder/model.py",
 		"/Users/rick446/src/recorder/recorder/app.py",
 		"/Users/rick446/src/recorder/run.py",
@@ -1050,16 +1059,11 @@
 		"/Users/rick446/src/recorder/ui/src/containers/MainNavbarContainer.jsx",
 		"/Users/rick446/src/recorder/ui/src/containers/index.js",
 		"/Users/rick446/src/recorder/node_modules/console-browserify/test/index.js",
-		"/Users/rick446/src/recorder/ui/src/lib/stateConstants.js",
-		"/Users/rick446/src/recorder/ui/src/RegistrationPage.jsx",
-		"/Users/rick446/src/recorder/ui/src/sagas/index.js",
-		"/Users/rick446/src/recorder/ui/src/sagas/miscSaga.js",
-		"/Users/rick446/src/recorder/ui/src/ducks/userDuckjs",
-		"/Users/rick446/src/recorder/ui/src/containers/PasswordChangeFormContainer.jsx"
+		"/Users/rick446/src/recorder/ui/src/lib/stateConstants.js"
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -1074,6 +1078,16 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"18",
+			"--rest",
+			"mongo2",
+			"mongo1",
+			"mongo-a",
+			"mongo",
+			"image: mongodb-replica-set",
+			"mongo.post",
+			"list",
+			"post",
 			"MailboxBody",
 			"number",
 			"public_profile",
@@ -1191,17 +1205,7 @@
 			"recording",
 			"bootstrap-",
 			"href",
-			"link",
-			"desc",
-			"MarkdownEdito",
-			"Marked",
-			"ButtonToolBar",
-			"ButtonBar",
-			"HeadingEditor",
-			"extra",
-			"this.props",
-			"FieldFormControl",
-			"mailbox"
+			"link"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1223,56 +1227,30 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app.py",
+					"file": "/Users/rick446/src/PackT/DevelopingWithMongoDB/restaurants.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 960,
+						"buffer_size": 848,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								711,
-								711
+								383,
+								388
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/Users/rick446/src/PackT/DevelopingWithMongoDB/runapp.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 103,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								61,
-								61
-							]
-						],
-						"settings":
-						{
+							"auto_name": "restaurants.py",
+							"git_gutter_enabled": true,
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
@@ -1283,31 +1261,65 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "model.py",
+					"buffer": 1,
+					"file": "/Users/rick446/src/PackT/DevelopingWithMongoDB/docker-compose.yaml",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 316,
+						"buffer_size": 730,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								298,
-								298
+								0,
+								730
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
+							"git_gutter_enabled": true,
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/rick446/src/PackT/DevelopingWithMongoDB/compose-shards.yaml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 801,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								248,
+								248
+							]
+						],
+						"settings":
+						{
+							"git_gutter_enabled": true,
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1374,12 +1386,16 @@
 		"selected_items":
 		[
 			[
-				"run",
-				"recorder/run.py"
+				"compos",
+				"docker-compose.yaml"
 			],
 			[
 				"model.p",
-				"recorder/recorder/model.py"
+				"blog/model.py"
+			],
+			[
+				"run",
+				"recorder/run.py"
 			],
 			[
 				"app.p",
@@ -1880,10 +1896,6 @@
 			[
 				"authdu",
 				"recorder/ui/src/ducks/authDuck.js"
-			],
-			[
-				"src/globa",
-				"recorder/ui/src/globals.js"
 			]
 		],
 		"width": 0.0
@@ -1896,7 +1908,7 @@
 		[
 			[
 				"",
-				"~/src/AppliedSilver.sublime-project"
+				"~/src/Hydrian.sublime-project"
 			],
 			[
 				"applie",
@@ -1961,7 +1973,7 @@
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 251.0,
 	"status_bar_visible": true,
 	"template_settings":
