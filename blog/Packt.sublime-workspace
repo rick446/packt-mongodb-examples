@@ -526,13 +526,10 @@
 			}
 		},
 		{
-			"contents": "version: '3'\nservices:\n  mongo-data:\n    image: mongo\n    hostname: mongo-data\n    entrypoint: [ \"/usr/bin/mongod\" ]\n    ports:\n      - \"27018:27018\"\n\n  mongo-config:\n    image: mongo\n    hostname: mongo-config\n    entrypoint: [ \"/usr/bin/mongod\" ]\n    ports:\n      - \"27018:27018\"\n\n  mongo-b:\n    image: mongo\n    hostname: mongo-b\n    entrypoint: [ \"/usr/bin/mongod\", \"--replSet\", \"rs\", \"--journal\", \"--smallfiles\", \"--port\", \"27019\" ]\n    ports:\n      - \"27019:27019\"\n\n  mongo-c:\n    image: mongo\n    hostname: mongo-c\n    entrypoint: [ \"/usr/bin/mongod\", \"--replSet\", \"rs\", \"--journal\", \"--smallfiles\", \"--port\", \"27020\" ]\n    ports:\n      - \"27020:27020\"\n\n  mongosetup:\n    image: mongo\n    links:\n      - mongo-a:mongo-a\n      - mongo-b:mongo-b\n      - mongo-c:mongo-c\n    command: /bin/bash -i\n",
 			"file": "/Users/rick446/src/PackT/DevelopingWithMongoDB/compose-shards.yaml",
-			"file_size": 730,
-			"file_write_time": 131357940730000000,
 			"settings":
 			{
-				"buffer_size": 801,
+				"buffer_size": 679,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -1078,6 +1075,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"data",
 			"18",
 			"--rest",
 			"mongo2",
@@ -1204,8 +1202,7 @@
 			"start",
 			"recording",
 			"bootstrap-",
-			"href",
-			"link"
+			"href"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1227,7 +1224,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -1251,13 +1248,15 @@
 						{
 							"auto_name": "restaurants.py",
 							"git_gutter_enabled": true,
-							"syntax": "Packages/Python/Python.sublime-syntax"
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -1273,8 +1272,8 @@
 						"selection":
 						[
 							[
-								0,
-								730
+								345,
+								345
 							]
 						],
 						"settings":
@@ -1297,15 +1296,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 801,
+						"buffer_size": 679,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								248,
-								248
+								652,
+								652
 							]
 						],
 						"settings":
@@ -1319,7 +1318,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
