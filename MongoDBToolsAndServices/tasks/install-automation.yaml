@@ -1,0 +1,25 @@
+- name: Install MMS automation agent
+  apt:
+    deb: https://cloud.mongodb.com/download/agent/automation/mongodb-mms-automation-agent-manager_3.8.0.2108-1_amd64.ubuntu1604.deb
+- name: set mms GroupID
+  lineinfile:
+    path: /etc/mongodb-mms/automation-agent.config
+    regexp: '^mmsGroupId'
+    line: 'mmsGroupId={{mmsGroupId}}'
+- name: set mms API Key
+  lineinfile:
+    path: /etc/mongodb-mms/automation-agent.config
+    regexp: '^mmsApiKey'
+    line: 'mmsApiKey={{mmsApiKey}}'
+- name: create data directory
+  file:
+    path: /data
+    state: directory
+    mode: 0755
+    owner: mongodb
+    group: mongodb
+- name: start the agent
+  systemd:
+    name: mongodb-mms-automation-agent.service
+    state: started
+    enabled: True

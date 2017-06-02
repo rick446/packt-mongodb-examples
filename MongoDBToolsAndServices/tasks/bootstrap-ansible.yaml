@@ -1,0 +1,12 @@
+- name: install python 2
+  raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+- name: setup swap
+  command: fallocate -l 1G /swapfile creates=/swapfile
+- name: set swapfile mode
+  file:
+    path: /swapfile
+    owner: root
+    group: root
+    mode: 0600
+- command: mkswap /swapfile
+- command: swapon /swapfile

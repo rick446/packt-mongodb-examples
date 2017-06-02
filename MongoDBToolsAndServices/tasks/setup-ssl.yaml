@@ -1,0 +1,45 @@
+- name: generate CA files
+  local_action: command openssl req -out ca.pem -new -x509 -days 3650 -subj '/C=US/ST=GA/O=Organisation/CN=root/emailAddress=user@domain.com' -nodes
+
+- name: upload ca.pem
+  copy:
+  args:
+    src: ../ca.pem
+    dest: /etc/ssl/ca.pem
+    owner: root
+    group: root
+    mode: 0644
+- name: upload ca privkey.pem
+  copy:
+  args:
+    src: ../privkey.pem
+    dest: /etc/ssl/privkey.pem
+    owner: root
+    group: root
+    mode: 0644
+- name: create SRL
+  copy:
+  args:
+    dest: /etc/ssl/file.srl
+    owner: root
+    group: root
+    mode: 0644
+    content: '00'
+
+- name: generate CSR
+  command: |
+    openssl req -newkey rsa:2048 -keyout mongodb-cert.key -new -days 365 -out mongodb-cert.req -subj "/C=US/ST=Oregon/L=Portland/O=IT/CN={{ansible_fqdn}}" -nodes
+  args:
+    chdir: /etc/ssl
+
+- name: sign cert
+  command: |
+    openssl x509 -req -in mongodb-cert.req -days 365 -CA ca.pem -CAkey privkey.pem -CAserial file.srl -out mongodb-cert.crt
+  args:
+    chdir: /etc/ssl
+
+- name: create PEM
+  shell: cat mongodb-cert.key mongodb-cert.crt > mongodb.pem
+  args:
+    chdir: /etc/ssl
+

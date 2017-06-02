@@ -3,6 +3,9 @@
 	[
 		{
 			"path": "/Users/rick446/src/PackT/DevelopingWithMongoDB"
+		},
+		{
+			"path": "/Users/rick446/src/PackT/MongoDBToolsAndServices"
 		}
 	]
 }

@@ -507,33 +507,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/Users/rick446/src/PackT/DevelopingWithMongoDB/restaurants.py",
-			"settings":
-			{
-				"buffer_size": 848,
-				"encoding": "UTF-8",
-				"line_ending": "Unix",
-				"name": "restaurants.py"
-			}
-		},
-		{
-			"file": "/Users/rick446/src/PackT/DevelopingWithMongoDB/docker-compose.yaml",
-			"settings":
-			{
-				"buffer_size": 730,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/rick446/src/PackT/DevelopingWithMongoDB/compose-shards.yaml",
-			"settings":
-			{
-				"buffer_size": 679,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -542,10 +515,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 47.0,
-		"last_filter": "python",
+		"height": 207.0,
+		"last_filter": "setting",
 		"selected_items":
 		[
+			[
+				"setting",
+				"Preferences: Settings"
+			],
 			[
 				"python",
 				"Set Syntax: Python"
@@ -903,7 +880,7 @@
 				"View: Toggle Side Bar"
 			]
 		],
-		"width": 485.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -923,15 +900,36 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/rick446/src/PackT/DevelopingWithMongoDB",
-		"/Users/rick446/src/PackT/DevelopingWithMongoDB/.ipynb_checkpoints",
-		"/Users/rick446/src/PackT/DevelopingWithMongoDB/blog"
+		"/Users/rick446/src/PackT/MongoDBToolsAndServices",
+		"/Users/rick446/src/PackT/MongoDBToolsAndServices/playbooks",
+		"/Users/rick446/src/PackT/MongoDBToolsAndServices/tasks"
 	],
 	"file_history":
 	[
-		"/Users/rick446/src/PackT/DevelopingWithMongoDB/blog/model.py",
+		"/Users/rick446/src/PackT/MongoDBToolsAndServices/docker-compose.yaml",
+		"/Users/rick446/.ssh/config",
+		"/Users/rick446/src/PackT/MongoDBToolsAndServices/playbooks/cloudmanager.yaml",
+		"/Users/rick446/src/PackT/MongoDBToolsAndServices/replSetInitiate.js",
+		"/Users/rick446/src/PackT/MongoDBToolsAndServices/tasks/install-automation.yaml",
+		"/Users/rick446/src/PackT/MongoDBToolsAndServices/tasks/setup-ssl.yaml",
+		"/Users/rick446/src/PackT/MongoDBToolsAndServices/tasks/bootstrap-ansible.yaml",
+		"/Users/rick446/src/PackT/MongoDBToolsAndServices/ansible.cfg",
+		"/Users/rick446/src/PackT/MongoDBToolsAndServices/vars/mms-keys.yaml",
+		"/Users/rick446/src/PackT/MongoDBToolsAndServices/tasks/setup-hosts.yaml",
+		"/Users/rick446/src/PackT/MongoDBToolsAndServices/tasks/bootstrap-ansible.yml",
+		"/Users/rick446/src/PackT/MongoDBToolsAndServices/tasks/setup-hosts.yml",
+		"/Users/rick446/src/PackT/MongoDBToolsAndServices/tasks/boostrap-ansible.yml",
+		"/Users/rick446/src/PackT/MongoDBToolsAndServices/playbooks/boostrap-ansible.yml",
+		"/Users/rick446/src/PackT/MongoDBToolsAndServices/hosts",
 		"/Users/rick446/src/PackT/DevelopingWithMongoDB/replSetInitiate.js",
+		"/Users/rick446/src/PackT/MongoDBToolsAndServices/playbooks/hosts.j2",
+		"/Users/rick446/src/PackT/MongoDBToolsAndServices/.gitignore",
+		"/Users/rick446/src/PackT/MongoDBToolsAndServices/playbooks/mongodb-standalone.yaml",
+		"/Users/rick446/src/PackT/DevelopingWithMongoDB/.gitignore",
+		"/Users/rick446/src/PackT/DevelopingWithMongoDB/compose-shards.yaml",
+		"/Users/rick446/src/PackT/DevelopingWithMongoDB/restaurants.py",
 		"/Users/rick446/src/PackT/DevelopingWithMongoDB/docker-compose.yaml",
+		"/Users/rick446/src/PackT/DevelopingWithMongoDB/blog/model.py",
 		"/Users/rick446/src/PackT/DevelopingWithMongoDB/blog/app.py",
 		"/Users/rick446/src/PackT/DevelopingWithMongoDB/runapp.py",
 		"/Users/rick446/src/recorder/recorder/model.py",
@@ -1035,28 +1033,7 @@
 		"/Users/rick446/src/recorder/ui/node_modules/react-icons/fa/index.js",
 		"/Users/rick446/src/recorder/recorder/commands/shell.py",
 		"/Users/rick446/src/recorder/ui/src/pages/GroupsPage.jsx",
-		"/Users/rick446/src/recorder/recorder/blueprints/bp_api/resources/r_event.py",
-		"/Users/rick446/src/frs/setup.py",
-		"/Users/rick446/src/recorder/ui/runtime.txt",
-		"/Users/rick446/src/recorder/recorder/errors.py",
-		"/Users/rick446/.ssh/config",
-		"/Users/rick446/src/recorder/recorder/error.py",
-		"/Users/rick446/src/rest-flask/Flask/env-flask/lib/python2.7/site-packages/pip/_vendor/requests/models.py",
-		"/Users/rick446/src/barin/barin/collection.py",
-		"/Users/rick446/src/barin/barin/index.py",
-		"/Users/rick446/src/recorder/recorder/blueprints/bp_api/resources/r_invitation.py",
-		"/Users/rick446/src/recorder/node_modules/acorn/bin/update_authors.sh",
-		"/Users/rick446/src/recorder/node_modules/parse5/lib/simple_api/simple_api_parser.js",
-		"/Users/rick446/src/recorder/ui/src/validators.js",
-		"/Users/rick446/src/recorder/ui/src/components/Notification.jsx",
-		"/Users/rick446/src/recorder/ui/src/pages/ResetPasswordPage.jsx",
-		"/Users/rick446/src/recorder/ui/src/components/LoginForm.jsx",
-		"/Users/rick446/src/recorder/ui/src/SettingsPage.jsx",
-		"/Users/rick446/src/recorder/ui/src/components/LoginBadge.jsx",
-		"/Users/rick446/src/recorder/ui/src/containers/MainNavbarContainer.jsx",
-		"/Users/rick446/src/recorder/ui/src/containers/index.js",
-		"/Users/rick446/src/recorder/node_modules/console-browserify/test/index.js",
-		"/Users/rick446/src/recorder/ui/src/lib/stateConstants.js"
+		"/Users/rick446/src/recorder/recorder/blueprints/bp_api/resources/r_event.py"
 	],
 	"find":
 	{
@@ -1224,103 +1201,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/Users/rick446/src/PackT/DevelopingWithMongoDB/restaurants.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 848,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								383,
-								388
-							]
-						],
-						"settings":
-						{
-							"auto_name": "restaurants.py",
-							"git_gutter_enabled": true,
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/Users/rick446/src/PackT/DevelopingWithMongoDB/docker-compose.yaml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 730,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								345,
-								345
-							]
-						],
-						"settings":
-						{
-							"git_gutter_enabled": true,
-							"syntax": "Packages/YAML/YAML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Users/rick446/src/PackT/DevelopingWithMongoDB/compose-shards.yaml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 679,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								652,
-								652
-							]
-						],
-						"settings":
-						{
-							"git_gutter_enabled": true,
-							"syntax": "Packages/YAML/YAML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1384,6 +1266,42 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"repl",
+				"MongoDBToolsAndServices/replSetInitiate.js"
+			],
+			[
+				"compo",
+				"MongoDBToolsAndServices/docker-compose.yaml"
+			],
+			[
+				"boot",
+				"MongoDBToolsAndServices/tasks/bootstrap-ansible.yaml"
+			],
+			[
+				"setup-",
+				"MongoDBToolsAndServices/tasks/setup-hosts.yaml"
+			],
+			[
+				"boo",
+				"MongoDBToolsAndServices/tasks/boostrap-ansible.yml"
+			],
+			[
+				"host",
+				"MongoDBToolsAndServices/hosts"
+			],
+			[
+				"cloud",
+				"MongoDBToolsAndServices/playbooks/cloudmanager.yaml"
+			],
+			[
+				".giti",
+				"MongoDBToolsAndServices/.gitignore"
+			],
+			[
+				"d",
+				"docker-compose.yaml"
+			],
 			[
 				"compos",
 				"docker-compose.yaml"
@@ -1859,42 +1777,6 @@
 			[
 				"urls.",
 				"recorder/ui/src/urls.json"
-			],
-			[
-				"glob",
-				"recorder/ui/src/globals.js"
-			],
-			[
-				"r_",
-				"recorder/recorder/blueprints/bp_api/resources/r_oauth.py"
-			],
-			[
-				"default",
-				"recorder/recorder/default_config.py"
-			],
-			[
-				"app.",
-				"recorder/recorder/app.py"
-			],
-			[
-				"dashboardp",
-				"recorder/ui/src/pages/DashboardPage.jsx"
-			],
-			[
-				"mainna",
-				"recorder/ui/src/components/MainNavbar.jsx"
-			],
-			[
-				"runti",
-				"recorder/runtime.txt"
-			],
-			[
-				"resourcesaga",
-				"recorder/ui/src/sagas/resourceSaga.js"
-			],
-			[
-				"authdu",
-				"recorder/ui/src/ducks/authDuck.js"
 			]
 		],
 		"width": 0.0
@@ -1907,7 +1789,11 @@
 		[
 			[
 				"",
-				"~/src/Hydrian.sublime-project"
+				"~/src/recorder/recorder/commands/eht.sublime-project"
+			],
+			[
+				"reco",
+				"~/src/recorder/recorder.sublime-project"
 			],
 			[
 				"applie",
@@ -1972,7 +1858,7 @@
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 251.0,
 	"status_bar_visible": true,
 	"template_settings":

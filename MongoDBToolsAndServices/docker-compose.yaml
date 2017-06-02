@@ -1,0 +1,31 @@
+version: '3'
+services:
+  mongo-a:
+    image: mongo
+    hostname: mongo-a
+    entrypoint: [ "/usr/bin/mongod", "--replSet", "rs", "--journal", "--smallfiles", "--port", "27018" ]
+    ports:
+      - "27018:27018"
+
+  mongo-b:
+    image: mongo
+    hostname: mongo-b
+    entrypoint: [ "/usr/bin/mongod", "--replSet", "rs", "--journal", "--smallfiles", "--port", "27019" ]
+    ports:
+      - "27019:27019"
+
+  mongo-c:
+    image: mongo
+    hostname: mongo-c
+    entrypoint: [ "/usr/bin/mongod", "--replSet", "rs", "--journal", "--smallfiles", "--port", "27020" ]
+    ports:
+      - "27020:27020"
+
+  mongosetup:
+    image: mongo
+    hostname: mongosetup
+    links:
+      - mongo-a:mongo-a
+      - mongo-b:mongo-b
+      - mongo-c:mongo-c
+    command: /bin/bash -i
