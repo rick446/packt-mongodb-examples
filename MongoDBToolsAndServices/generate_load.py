@@ -12,37 +12,6 @@ import pymongo
 log = logging.getLogger('load')
 
 
-class RateLogger(object):
-    headers = ''
-
-    def __init__(self, logger, interval=1):
-        self.logger = logger
-        self.interval = interval
-        self.counters = Counter()
-        self.last_printed = time.time()
-        self.num_prints = 0
-
-    def log(self, name):
-        self.counters[name] += 1
-        now = time.time()
-        elapsed = now - self.last_printed
-        if elapsed <= self.interval:
-            return
-        fields = sorted(self.counters.keys())
-        counters = [self.counters[f] for f in fields]
-        rates = [c / elapsed for c in counters]
-        colw = max(len(f) for f in fields)
-        colw = max(colw, 5)
-        f_header = ['%{}s'.format(colw)]
-        d_header = ['%{}.2f'.format(colw)]
-        if self.num_prints % 10 == 0:
-            self.logger.info(' | '.join(f_header * len(fields)), *fields)
-        self.logger.info(' | '.join(d_header * len(fields)), *rates)
-        for k in self.counters:
-            self.counters[k] = 0
-        self.num_prints += 1
-        self.last_printed = now
-
 def main():
     logging.basicConfig(format='%(processName)s / %(threadName)s: %(message)s', level=logging.INFO)
     parser = argparse.ArgumentParser(description='Generate load for MongoDB')
@@ -74,7 +43,7 @@ def main():
         'uri', nargs='?', help='The MongoDB DBURI to target',
         default='mongodb://localhost:27017/test')
     args = parser.parse_args()
-    log.info('Starting MongoDB load test with the following parameters:\n%r', args)
+    log.info('Starting MongoDB load test with the following parameters:')
     for arg in ('processes', 'threads', 'num_ix_b', 'num_ix_n', 'collection', 'database', 'limit', 'read_preference', 'uri'):
         log.info('%20s: %s', arg, getattr(args, arg))
     stat_queue = multiprocessing.Queue()
@@ -92,8 +61,43 @@ def main():
         rl.log(msg)
 
 
+class RateLogger(object):
+    headers = ''
+
+    def __init__(self, logger, interval=10):
+        self.logger = logger
+        self.interval = interval
+        self.counters = Counter()
+        self.last_printed = time.time()
+        self.num_prints = 0
+
+    def log(self, name):
+        self.counters[name] += 1
+        now = time.time()
+        elapsed = now - self.last_printed
+        if elapsed <= self.interval:
+            return
+        fields = sorted(self.counters.keys())
+        counters = [self.counters[f] for f in fields]
+        rates = [c / elapsed for c in counters]
+        colw = max(len(f) for f in fields)
+        colw = max(colw, 5)
+        f_header = ['%{}s'.format(colw)]
+        d_header = ['%{}.2f'.format(colw)]
+        if self.num_prints % 10 == 0:
+            self.logger.info(' | '.join(f_header * len(fields)), *fields)
+        self.logger.info(' | '.join(d_header * len(fields)), *rates)
+        for k in self.counters:
+            self.counters[k] = 0
+        self.num_prints += 1
+        self.last_printed = now
+
+
+
 def ptarget(stat_queue, uri, read_preference, dbname, cname, threads, num_ix_b, num_ix_n, limit):
     cli = pymongo.MongoClient(uri, readPreference=read_preference)
+    time.sleep(1)
+    print(cli.nodes)
     coll = cli[dbname][cname]
     targs = (stat_queue, coll, num_ix_b, num_ix_n, limit)
     threads = [

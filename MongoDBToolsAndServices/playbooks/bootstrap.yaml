@@ -1,0 +1,5 @@
+- name: Bootstrap Ansible
+  hosts: lg-*
+  gather_facts: false
+  tasks:
+  - include: ../tasks/bootstrap-ansible.yaml

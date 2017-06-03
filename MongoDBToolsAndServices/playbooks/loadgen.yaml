@@ -1,0 +1,31 @@
+
+- hosts: lg-*
+  gather_facts: false
+  vars_files:
+    - ../vars/dburis.yaml
+  vars:
+    uri: "{{uris[cluster]}}"
+  tasks:
+    # These tasks must be run the first time, but need not be re-run
+    #   on every configuration change
+    # - apt: name=supervisor
+    # - apt: name=python3-pip
+    # - pip:
+    #     name: pymongo
+    #     executable: /usr/bin/pip3
+    # - copy:
+    #     src: ../generate_load.py
+    #     dest: /root/generate_load.py
+    - template:
+        src: ../templates/loadgen.conf.j2
+        dest: /etc/supervisor/conf.d/loadgen.conf
+    - supervisorctl:
+        name: loadgen
+        state: stopped
+    - shell: pkill python3
+    - service:
+        name: supervisor
+        state: reloaded
+    - supervisorctl:
+        name: loadgen
+        state: started

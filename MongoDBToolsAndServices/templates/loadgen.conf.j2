@@ -1,0 +1,3 @@
+[program:loadgen]
+command=/usr/bin/python3 generate_load.py '{{uri}}' --read_preference {{read_preference}} --process 4
+directory=/root

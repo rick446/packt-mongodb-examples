@@ -1,0 +1,10 @@
+uris:
+  cluster0: mongodb://test:test@cluster0-shard-00-00-6ypgo.mongodb.net:27017,cluster0-shard-00-01-6ypgo.mongodb.net:27017,cluster0-shard-00-02-6ypgo.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin
+  cluster10: mongodb://test:test@cluster10-shard-00-00-6ypgo.mongodb.net:27017,cluster10-shard-00-01-6ypgo.mongodb.net:27017,cluster10-shard-00-02-6ypgo.mongodb.net:27017/test?ssl=true&replicaSet=Cluster10-shard-0&authSource=admin
+  cluster30: mongodb://test:test@cluster30-shard-00-00-6ypgo.mongodb.net:27017,cluster30-shard-00-01-6ypgo.mongodb.net:27017,cluster30-shard-00-02-6ypgo.mongodb.net:27017/test?ssl=true&replicaSet=Cluster30-shard-0&authSource=admin
+  cluster30s: mongodb://test:test@cluster30s-shard-00-00-6ypgo.mongodb.net:37017,cluster30s-shard-00-01-6ypgo.mongodb.net:37017,cluster30s-shard-00-02-6ypgo.mongodb.net:37017,cluster30s-shard-01-00-6ypgo.mongodb.net:37017,cluster30s-shard-01-01-6ypgo.mongodb.net:37017,cluster30s-shard-01-02-6ypgo.mongodb.net:37017/test?ssl=true&authSource=admin
+  cluster30sr: mongodb://test:test@cluster30sr-shard-00-00-6ypgo.mongodb.net:37017,cluster30sr-shard-00-01-6ypgo.mongodb.net:37017,cluster30sr-shard-00-02-6ypgo.mongodb.net:37017,cluster30sr-shard-01-00-6ypgo.mongodb.net:37017,cluster30sr-shard-01-01-6ypgo.mongodb.net:37017,cluster30sr-shard-01-02-6ypgo.mongodb.net:37017/test?ssl=true&authSource=admin
+  cluster50: mongodb://test:test@cluster50-shard-00-00-6ypgo.mongodb.net:27017,cluster50-shard-00-01-6ypgo.mongodb.net:27017,cluster50-shard-00-02-6ypgo.mongodb.net:27017/test?ssl=true&replicaSet=Cluster50-shard-0&authSource=admin
+
+
+

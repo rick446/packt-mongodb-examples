@@ -1,0 +1,23 @@
+- hosts: lg-a1
+  gather_facts: false
+  vars_files:
+    - ../vars/dburis.yaml
+  vars:
+    uri: "{{uris[cluster]}}"
+  tasks:
+    - apt: name=supervisor
+    - apt: name=python3-pip
+    - pip:
+        name: pymongo
+        executable: /usr/bin/pip3
+    - copy:
+        src: ../initialize_database.py
+        dest: /root/initialize_database.py
+    # Uncomment one of the following tasks below based on whether you'll be sharding or making the shard
+    #   routeable
+    # - name: Initialize the database (unsharded)
+    #   command: /usr/bin/python3 /root/initialize_database.py "{{uris[cluster]}}"
+    # - name: Initialize the database (sharded)
+    #   command: /usr/bin/python3 /root/initialize_database.py "{{uris[cluster]}}" --shard
+    # - name: Initialize the database (sharded + routeable)
+    #   command: /usr/bin/python3 /root/initialize_database.py "{{uris[cluster]}}" --shard --routeable
