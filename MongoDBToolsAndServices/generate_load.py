@@ -13,7 +13,9 @@ log = logging.getLogger('load')
 
 
 def main():
-    logging.basicConfig(format='%(processName)s / %(threadName)s: %(message)s', level=logging.INFO)
+    logging.basicConfig(
+        format='%(processName)s / %(threadName)s: %(message)s',
+        level=logging.INFO)
     parser = argparse.ArgumentParser(description='Generate load for MongoDB')
     parser.add_argument(
         '--processes', '-p', type=int,
@@ -44,12 +46,14 @@ def main():
         default='mongodb://localhost:27017/test')
     args = parser.parse_args()
     log.info('Starting MongoDB load test with the following parameters:')
-    for arg in ('processes', 'threads', 'num_ix_b', 'num_ix_n', 'collection', 'database', 'limit', 'read_preference', 'uri'):
+    for arg in ('processes', 'threads', 'num_ix_b', 'num_ix_n', 'collection',
+        'database', 'limit', 'read_preference', 'uri'):
         log.info('%20s: %s', arg, getattr(args, arg))
     stat_queue = multiprocessing.Queue()
     pargs = (
-        stat_queue, args.uri, args.read_preference, args.database, args.collection,
-        args.threads, args.num_ix_b, args.num_ix_n, args.limit)
+        stat_queue, args.uri, args.read_preference, args.database,
+        args.collection, args.threads, args.num_ix_b, args.num_ix_n,
+        args.limit)
     processes = [
         multiprocessing.Process(target=ptarget, args=pargs, daemon=True)
         for i in range(args.processes)]
@@ -93,8 +97,9 @@ class RateLogger(object):
         self.last_printed = now
 
 
-
-def ptarget(stat_queue, uri, read_preference, dbname, cname, threads, num_ix_b, num_ix_n, limit):
+def ptarget(
+        stat_queue, uri, read_preference,
+        dbname, cname, threads, num_ix_b, num_ix_n, limit):
     cli = pymongo.MongoClient(uri, readPreference=read_preference)
     time.sleep(1)
     print(cli.nodes)
@@ -114,7 +119,8 @@ def ptarget(stat_queue, uri, read_preference, dbname, cname, threads, num_ix_b, 
 def ttarget(stat_queue, coll, num_ix_b, num_ix_n, limit):
     threads = [
         threading.Thread(
-            target=query_test, args=(stat_queue, coll, num_ix_b, num_ix_n, limit)),
+            target=query_test,
+            args=(stat_queue, coll, num_ix_b, num_ix_n, limit)),
         threading.Thread(
             target=update_test, args=(stat_queue, coll, num_ix_b, num_ix_n))]
     for t in threads:

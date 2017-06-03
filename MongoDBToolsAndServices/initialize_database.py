@@ -7,7 +7,9 @@ log = logging.getLogger('load')
 
 
 def main():
-    logging.basicConfig(format='%(processName)s / %(threadName)s: %(message)s', level=logging.INFO)
+    logging.basicConfig(
+        format='%(processName)s / %(threadName)s: %(message)s',
+        level=logging.INFO)
     parser = argparse.ArgumentParser(description='Generate load for MongoDB')
     parser.add_argument(
         '--num_ix_b', type=int, default=1000)
@@ -27,7 +29,8 @@ def main():
         'uri', nargs='?', help='The MongoDB DBURI to target',
         default='mongodb://localhost:27017/test')
     args = parser.parse_args()
-    log.info('Starting MongoDB database initializer with the following parameters:')
+    log.info(
+        'Starting MongoDB database initializer with the following parameters:')
     for arg in ('num_ix_b', 'num_ix_n', 'collection', 'database', 'shard', 'uri'):
         log.info('%20s: %s', arg, getattr(args, arg))
     cli = pymongo.MongoClient(args.uri)
